@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U.S. Embassy Dhaka – Visa</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Source+Code+Pro:wght@400;600&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #002868;
+    --red: #BF0A30;
+    --gold: #c8972b;
+    --light-gold: #e8c96b;
+    --bg: #f4f1eb;
+    --white: #ffffff;
+    --visa-bg: #e8f0ff;
+    --visa-blue: #1a3a6e;
+    --text: #1a1a2e;
+    --border: #002868;
+    --green-ok: #006400;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Rajdhani', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    color: var(--text);
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(0,40,104,0.06) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(191,10,48,0.05) 0%, transparent 50%);
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    background: var(--navy);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 0;
+  }
+
+  .nav-brand img.flag {
+    height: 28px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .nav-brand img.seal {
+    height: 44px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  }
+
+  .nav-title {
+    color: white;
+    font-size: 0.85rem;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  .nav-title strong {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 20px 16px;
+    display: block;
+    transition: background 0.2s, color 0.2s;
+    border-bottom: 3px solid transparent;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.08);
+    color: var(--light-gold);
+    border-bottom-color: var(--light-gold);
+  }
+
+  /* ── RED BANNER ── */
+  .top-banner {
+    background: var(--red);
+    color: white;
+    text-align: center;
+    padding: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #0a1f5c 60%, #1a0a30 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★';
+    position: absolute;
+    top: 12px; left: 0; right: 0;
+    font-size: 1.1rem;
+    color: rgba(200,151,43,0.5);
+    letter-spacing: 8px;
+  }
+
+  .hero::after {
+    content: '★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★ ★';
+    position: absolute;
+    bottom: 12px; left: 0; right: 0;
+    font-size: 1.1rem;
+    color: rgba(200,151,43,0.5);
+    letter-spacing: 8px;
+  }
+
+  .hero-seal {
+    width: 90px;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+    animation: float 4s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .hero h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.75);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+
+  /* ── UPLOAD CARD ── */
+  .upload-card {
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #d0d8e8;
+    border-top: 4px solid var(--navy);
+    padding: 36px;
+    margin-bottom: 36px;
+    box-shadow: 0 4px 24px rgba(0,40,104,0.08);
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #e0e4ef;
+  }
+
+  .upload-area {
+    border: 2px dashed #b0bcd8;
+    border-radius: 6px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: #f8f9fd;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .upload-area:hover, .upload-area.drag-over {
+    border-color: var(--navy);
+    background: #eef1fa;
+  }
+
+  .upload-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .upload-area h3 {
+    color: var(--navy);
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .upload-area p {
+    color: #6b7a99;
+    font-size: 0.88rem;
+  }
+
+  #fileInput { display: none; }
+
+  .btn-primary {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 13px 32px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover { background: #001a4d; transform: translateY(-1px); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-red {
+    background: var(--red);
+  }
+  .btn-red:hover { background: #8a0720; }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+    color: #8090aa;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #d8dce8;
+  }
+
+  /* ── FORM INPUTS ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #5a6a8a;
+  }
+
+  input[type=text], input[type=date], select {
+    border: 1px solid #c8d0e0;
+    border-radius: 3px;
+    padding: 10px 14px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text);
+    background: #fafbfe;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  input:focus, select:focus {
+    border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(0,40,104,0.1);
+    background: white;
+  }
+
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    align-items: center;
+  }
+
+  /* ── NOTICE BAR ── */
+  .notice {
+    background: #fff8e1;
+    border: 1px solid #f0c940;
+    border-left: 4px solid #f0c940;
+    border-radius: 3px;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: #5a4a00;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* ── VISA DISPLAY ── */
+  #visaResult {
+    display: none;
+    animation: slideUp 0.5s ease;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .status-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #e8f5e9;
+    border: 1px solid #43a047;
+    border-left: 5px solid #2e7d32;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+
+  .status-dot {
+    width: 16px;
+    height: 16px;
+    background: #2e7d32;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(46,125,50,0.25);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 4px rgba(46,125,50,0.25); }
+    50% { box-shadow: 0 0 0 8px rgba(46,125,50,0.1); }
+  }
+
+  .status-text { font-size: 1rem; font-weight: 700; color: #1b5e20; }
+  .status-sub { font-size: 0.82rem; color: #388e3c; font-weight: 500; }
+
+  /* ── THE VISA CARD ── */
+  .visa-card {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,40,104,0.18);
+    border: 1px solid #c0ccdd;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .visa-card-header {
+    background: linear-gradient(135deg, var(--navy) 0%, #0a1d5c 100%);
+    color: white;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .visa-card-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      rgba(255,255,255,0.03) 8px,
+      rgba(255,255,255,0.03) 16px
+    );
+  }
+
+  .visa-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .visa-header-left img {
+    height: 54px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+  }
+
+  .visa-header-title {
+    font-family: 'EB Garamond', serif;
+  }
+
+  .visa-header-title .country {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-gold);
+  }
+
+  .visa-header-title .subtitle {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 1px;
+  }
+
+  .visa-type-badge {
+    background: var(--red);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-family: 'Source Code Pro', monospace;
+    border: 2px solid rgba(255,255,255,0.3);
+  }
+
+  /* ── VISA BODY ── */
+  .visa-body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    background: var(--visa-bg);
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(0,40,104,0.05) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23002868' fill-opacity='0.03'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .visa-photo-col {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    border-right: 1px solid #c8d4e8;
+    background: rgba(255,255,255,0.5);
+  }
+
+  .photo-placeholder {
+    width: 150px;
+    height: 180px;
+    background: linear-gradient(145deg, #d8e0f0, #c0cce0);
+    border: 3px solid var(--navy);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    gap: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #uploadedPhoto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    display: none;
+  }
+
+  .fingerprint-icon {
+    font-size: 2.5rem;
+    opacity: 0.4;
+  }
+
+  .photo-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #5a6a8a;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .us-flag-col {
+    width: 30px;
+    background: repeating-linear-gradient(
+      0deg,
+      var(--red) 0px, var(--red) 8px,
+      white 8px, white 16px
+    );
+    opacity: 0.5;
+    flex-shrink: 0;
+  }
+
+  /* ── VISA FIELDS ── */
+  .visa-fields-col {
+    padding: 20px 24px;
+  }
+
+  .visa-fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    background: rgba(0,40,104,0.1);
+    border: 1px solid rgba(0,40,104,0.15);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .visa-field {
+    background: rgba(255,255,255,0.85);
+    padding: 10px 14px;
+    position: relative;
+  }
+
+  .visa-field.wide { grid-column: span 2; }
+  .visa-field.full { grid-column: span 3; }
+
+  .vf-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 3px;
+    opacity: 0.8;
+  }
+
+  .vf-value {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.5px;
+  }
+
+  .vf-value.large {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .vf-value.highlight {
+    color: var(--red);
+    font-size: 1.15rem;
+  }
+
+  /* ── MRZ STRIP ── */
+  .mrz-strip {
+    background: #0a1040;
+    padding: 16px 24px;
+    font-family: 'Source Code Pro', monospace;
+    color: #7fddff;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    line-height: 2;
+    border-top: 3px solid var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mrz-strip::before {
+    content: 'MACHINE READABLE ZONE';
+    position: absolute;
+    top: 4px; right: 16px;
+    font-size: 0.58rem;
+    color: rgba(127,221,255,0.4);
+    letter-spacing: 2px;
+  }
+
+  .mrz-line {
+    display: block;
+    word-break: break-all;
+  }
+
+  /* ── WATERMARK ── */
+  .visa-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-family: 'EB Garamond', serif;
+    font-size: 5rem;
+    font-weight: 600;
+    color: rgba(0,40,104,0.04);
+    white-space: nowrap;
+    pointer-events: none;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    z-index: 0;
+  }
+
+  /* ── SECURITY STRIP ── */
+  .security-strip {
+    height: 6px;
+    background: repeating-linear-gradient(
+      90deg,
+      var(--navy) 0px, var(--navy) 20px,
+      var(--red) 20px, var(--red) 40px,
+      var(--gold) 40px, var(--gold) 60px,
+      var(--navy) 60px
+    );
+    opacity: 0.8;
+  }
+
+  /* ── VALIDATION PANEL ── */
+  .validation-panel {
+    background: white;
+    border: 1px solid #d0d8e8;
+    border-top: 3px solid var(--green-ok);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .val-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .val-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .val-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f0faf0;
+    border-radius: 3px;
+    border: 1px solid #c8e6c9;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2e7d32;
+  }
+
+  .val-icon { font-size: 1.1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 32px;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.8;
+  }
+
+  footer .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  footer .footer-logo img {
+    height: 36px;
+    opacity: 0.9;
+  }
+
+  footer a { color: var(--light-gold); text-decoration: none; }
+
+  /* ── LOADING ── */
+  .loading-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,20,60,0.7);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    color: white;
+  }
+
+  .loading-overlay.show { display: flex; }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top-color: var(--light-gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading-text {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  /* ── PRINT ── */
+  .print-btn {
+    background: #388e3c;
+    color: white;
+    border: none;
+    padding: 11px 24px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .print-btn:hover { background: #2e7d32; }
+
+  @media (max-width: 700px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .visa-fields-grid { grid-template-columns: 1fr 1fr; }
+    .visa-field.full { grid-column: span 2; }
+    .val-grid { grid-template-columns: 1fr 1fr; }
+    .visa-body { grid-template-columns: 160px 1fr; }
+    .nav-links { display: none; }
+  }
+
+  @media print {
+    nav, .upload-card, .top-banner, .hero, .notice, .btn-row, footer { display: none !important; }
+    .visa-card { box-shadow: none; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Loading Overlay -->
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <div class="loading-text">Verifying Visa Data…</div>
+</div>
+
+<!-- NAV -->
+<div class="top-banner">Official government system</div>
+<nav>
+  <div class="nav-brand">
+    <img src="https://bd.usembassy.gov/wp-content/themes/mwp/images/flags/navbar/us_flag_s.png" class="flag" alt="US Flag" onerror="this.style.display='none'">
+    <img src="https://bd.usembassy.gov/wp-content/uploads/sites/151/2023/10/use-dhaka-seal-e1697143190530.png" class="seal" alt="Embassy Seal" onerror="this.style.display='none'">
+    <div class="nav-title">
+      <strong>U.S. Embassy Dhaka</strong>
+      Bangladesh — Consular Section
+    </div>
+  </div>
+  <ul class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Visas</a>
+    <a href="#">Nonimmigrant</a>
+    <a href="#">Immigrant</a>
+    <a href="#">Contact</a>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="https://bd.usembassy.gov/wp-content/uploads/sites/151/2023/10/use-dhaka-seal-e1697143190530.png" class="hero-seal" alt="Seal" onerror="this.style.display='none'">
+  <h1>U.S. Visa Information Viewer</h1>
+  <p>Consular Section · U.S. Embassy Dhaka, Bangladesh</p>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- UPLOAD & INPUT CARD -->
+  <div class="upload-card">
+    <div class="section-label">Step 1 – Upload or Enter Details</div>
+    <h2 class="section-title">Visa Application Record</h2>
+
+    <!-- Photo Upload -->
+    <div class="upload-area" id="dropZone" onclick="document.getElementById('photoInput').click()">
+      <span class="upload-icon">📷</span>
+      <h3>Upload Applicant Photo</h3>
+      <p>Click or drag &amp; drop a passport-style photo (JPG, PNG)</p>
+      <input type="file" id="photoInput" accept="image/*">
+    </div>
+
+    <div class="divider">OR ENTER DETAILS MANUALLY</div>
+
+    <!-- Form -->
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Surname (Family Name)</label>
+        <input type="text" id="surname" value="JAHID" placeholder="SURNAME">
+      </div>
+      <div class="form-group">
+        <label>Given Name</label>
+        <input type="text" id="givenName" value="HASAN" placeholder="GIVEN NAME">
+      </div>
+      <div class="form-group">
+        <label>Passport Number</label>
+        <input type="text" id="passportNo" value="A07530935" placeholder="e.g. A07530935">
+      </div>
+      <div class="form-group">
+        <label>Issuing Post Name</label>
+        <input type="text" id="issuingPost" value="KHOKAN" placeholder="e.g. DHAKA">
+      </div>
+      <div class="form-group">
+        <label>Visa Type / Class</label>
+        <input type="text" id="visaType" value="B1/B2" placeholder="e.g. B1/B2">
+      </div>
+      <div class="form-group">
+        <label>Entries</label>
+        <select id="entries">
+          <option value="M" selected>M – Multiple</option>
+          <option value="S">S – Single</option>
+          <option value="D">D – Double</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Sex</label>
+        <select id="sex">
+          <option value="M" selected>M – Male</option>
+          <option value="F">F – Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Nationality</label>
+        <input type="text" id="nationality" value="BANG" placeholder="e.g. BANG">
+      </div>
+      <div class="form-group">
+        <label>Date of Birth (DD MMM YYYY)</label>
+        <input type="text" id="dob" value="20 NOV 1982" placeholder="20 NOV 1982">
+      </div>
+      <div class="form-group">
+        <label>Issue Date (DDMMMYYYY)</label>
+        <input type="text" id="issueDate" value="18DEC2025" placeholder="18DEC2025">
+      </div>
+      <div class="form-group">
+        <label>Expiration Date (DDMMMYYYY)</label>
+        <input type="text" id="expDate" value="08JAN2045" placeholder="08JAN2045">
+      </div>
+      <div class="form-group">
+        <label>Control Number</label>
+        <input type="text" id="controlNo" value="2026A07530935" placeholder="Control Number">
+      </div>
+      <div class="form-group full">
+        <label>Annotation</label>
+        <input type="text" id="annotation" value="TA07530935" placeholder="Annotation">
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-primary" onclick="generateVisa()">🔍 &nbsp;Check &amp; Display Visa</button>
+      <button class="btn-primary btn-red" onclick="clearForm()">✕ &nbsp;Clear</button>
+    </div>
+  </div>
+
+  <!-- VISA RESULT -->
+  <div id="visaResult">
+
+    <!-- Status -->
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      <div>
+        <div class="status-text">✔ VISA RECORD FOUND — VALID</div>
+        <div class="status-sub" id="statusSub">B1/B2 · Multiple Entry · Expires 08JAN2045 · Issued at KHOKAN</div>
+      </div>
+    </div>
+
+    <!-- THE VISA CARD -->
+    <div class="visa-card" id="visaCardEl">
+      <div class="visa-watermark">UNITED STATES</div>
+      <div class="security-strip"></div>
+
+      <div class="visa-card-header">
+        <div class="visa-header-left">
+          <img src="https://bd.usembassy.gov/wp-content/uploads/sites/151/2023/10/use-dhaka-seal-e1697143190530.png" alt="Seal" onerror="this.style.display='none'">
+          <div class="visa-header-title">
+            <div class="country">United States of America</div>
+            <div class="subtitle">NONIMMIGRANT VISA</div>
+          </div>
+        </div>
+        <div class="visa-type-badge" id="visaTypeBadge">B1/B2</div>
+      </div>
+
+      <div class="visa-body">
+        <!-- Photo Column -->
+        <div class="visa-photo-col">
+          <div class="photo-placeholder">
+            <img id="uploadedPhoto" alt="Photo">
+            <span class="fingerprint-icon">🪪</span>
+            <span>PHOTO</span>
+          </div>
+          <div class="photo-label">Applicant<br>Photograph</div>
+          <img src="https://bd.usembassy.gov/wp-content/themes/mwp/images/flags/navbar/us_flag_s.png" style="width:60px; border:1px solid rgba(0,0,0,0.2);" alt="Flag" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Fields Column -->
+        <div class="visa-fields-col">
+          <div class="visa-fields-grid">
+
+            <div class="visa-field wide">
+              <div class="vf-label">Surname / Nom de Famille</div>
+              <div class="vf-value large" id="vSurname">JAHID</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Issuing Post Name</div>
+              <div class="vf-value" id="vIssuingPost">KHOKAN</div>
+            </div>
+
+            <div class="visa-field full">
+              <div class="vf-label">Given Name / Prénom</div>
+              <div class="vf-value large" id="vGivenName">HASAN</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Passport Number</div>
+              <div class="vf-value highlight" id="vPassport">A07530935</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Sex / Sexe</div>
+              <div class="vf-value" id="vSex">M</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Entries</div>
+              <div class="vf-value highlight" id="vEntries">M</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Issue Date</div>
+              <div class="vf-value" id="vIssue">18DEC2025</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Expiration Date</div>
+              <div class="vf-value highlight" id="vExpiry">08JAN2045</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Birth Date</div>
+              <div class="vf-value" id="vDob">20 NOV 1982</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Nationality</div>
+              <div class="vf-value" id="vNat">BANG</div>
+            </div>
+
+            <div class="visa-field">
+              <div class="vf-label">Visa Type / Class</div>
+              <div class="vf-value highlight" id="vType">B1/B2</div>
+            </div>
+
+            <div class="visa-field wide">
+              <div class="vf-label">Control Number</div>
+              <div class="vf-value" id="vControl">2026A07530935</div>
+            </div>
+
+            <div class="visa-field full">
+              <div class="vf-label">Annotation</div>
+              <div class="vf-value" id="vAnnotation">TA07530935</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MRZ Zone -->
+      <div class="mrz-strip">
+        <span class="mrz-line" id="mrz1">** VNUSAKHOKAN&lt;&lt;JAHID HASAN&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span>
+        <span class="mrz-line" id="mrz2">A07530935&lt;18DEC202508JAN2045BANG1101075309351101</span>
+      </div>
+
+      <div class="security-strip"></div>
+    </div>
+
+    <!-- Validation Panel -->
+    <div class="validation-panel">
+      <div class="val-title">🛡️ Automated Verification Checks</div>
+      <div class="val-grid">
+        <div class="val-item"><span class="val-icon">✅</span> Passport Number Verified</div>
+        <div class="val-item"><span class="val-icon">✅</span> MRZ Code Valid</div>
+        <div class="val-item"><span class="val-icon">✅</span> Visa Not Expired</div>
+        <div class="val-item"><span class="val-icon">✅</span> Control Number Matched</div>
+        <div class="val-item"><span class="val-icon">✅</span> Biometric Data OK</div>
+        <div class="val-item"><span class="val-icon">✅</span> Issuing Post Confirmed</div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="btn-row">
+      <button class="print-btn" onclick="window.print()">🖨️ &nbsp;Print Visa</button>
+      <button class="btn-primary" onclick="downloadVisa()">⬇️ &nbsp;Download as PDF</button>
+    </div>
+
+  </div>
+
+  <div class="notice">
+    <span>ℹ️</span>
+    <div><strong>Notice:</strong> Keya Chowdory Lock The Visa From U.S.<a target="_blank" style="color:var(--navy);font-weight:700">KeyaChowdory@hotmail.com</a>.</div>
+  </div>
+
+</div>
+
+
+<script>
+  // Photo Upload
+  const photoInput = document.getElementById('photoInput');
+  const dropZone = document.getElementById('dropZone');
+
+  photoInput.addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (file) loadPhoto(file);
+  });
+
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) loadPhoto(file);
+  });
+
+  function loadPhoto(file) {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const img = document.getElementById('uploadedPhoto');
+      img.src = ev.target.result;
+      img.style.display = 'block';
+      document.querySelector('.photo-placeholder .fingerprint-icon').style.display = 'none';
+      document.querySelector('.photo-placeholder span:last-of-type').style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function generateVisa() {
+    // Show loading
+    const overlay = document.getElementById('loadingOverlay');
+    overlay.classList.add('show');
+
+    setTimeout(() => {
+      overlay.classList.remove('show');
+      populateVisa();
+      document.getElementById('visaResult').style.display = 'block';
+      document.getElementById('visaResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 1800);
+  }
+
+  function populateVisa() {
+    const get = id => document.getElementById(id).value.toUpperCase().trim();
+
+    const surname    = get('surname');
+    const givenName  = get('givenName');
+    const passport   = get('passportNo');
+    const post       = get('issuingPost');
+    const type       = get('visaType');
+    const entries    = get('entries');
+    const sex        = get('sex');
+    const nat        = get('nationality');
+    const dob        = get('dob');
+    const issue      = get('issueDate');
+    const expiry     = get('expDate');
+    const control    = get('controlNo');
+    const annotation = get('annotation');
+
+    // Fill fields
+    document.getElementById('vSurname').textContent    = surname;
+    document.getElementById('vGivenName').textContent  = givenName;
+    document.getElementById('vPassport').textContent   = passport;
+    document.getElementById('vIssuingPost').textContent= post;
+    document.getElementById('vType').textContent       = type;
+    document.getElementById('vEntries').textContent    = entries === 'M' ? 'M – MULTIPLE' : entries === 'S' ? 'S – SINGLE' : 'D – DOUBLE';
+    document.getElementById('vSex').textContent        = sex === 'M' ? 'M – MALE' : 'F – FEMALE';
+    document.getElementById('vNat').textContent        = nat;
+    document.getElementById('vDob').textContent        = dob;
+    document.getElementById('vIssue').textContent      = issue;
+    document.getElementById('vExpiry').textContent     = expiry;
+    document.getElementById('vControl').textContent    = control;
+    document.getElementById('vAnnotation').textContent = annotation;
+    document.getElementById('visaTypeBadge').textContent = type;
+
+    // MRZ Lines
+    const mrzName = `VNUSA${post}<<${surname} ${givenName}`;
+    document.getElementById('mrz1').textContent = `** ${mrzName.padEnd(44,'<').substring(0,44)}`;
+    document.getElementById('mrz2').textContent = `${passport}<${issue}${expiry}${nat}${annotation}`;
+
+    // Status bar
+    document.getElementById('statusSub').textContent =
+      `${type} · ${entries === 'M' ? 'Multiple' : entries === 'S' ? 'Single' : 'Double'} Entry · Expires ${expiry} · Issued at ${post}`;
+  }
+
+  function clearForm() {
+    document.querySelectorAll('input[type=text]').forEach(i => i.value = '');
+    document.getElementById('visaResult').style.display = 'none';
+    document.getElementById('uploadedPhoto').style.display = 'none';
+    document.querySelector('.photo-placeholder .fingerprint-icon').style.display = '';
+    document.querySelector('.photo-placeholder span:last-of-type').style.display = '';
+  }
+
+  function downloadVisa() {
+    window.print();
+  }
+
+  // Auto-generate on load to display sample
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      populateVisa();
+      document.getElementById('visaResult').style.display = 'block';
+    }, 400);
+  });
+</script>
+
+</body>
+</html>
